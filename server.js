@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const { syncAndSeed } = require("./db");
-
+if (process.env.SYNC) {
+  syncAndSeed();
+}
 const port = process.env.PORT || 3000;
 syncAndSeed();
 
