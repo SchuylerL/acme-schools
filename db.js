@@ -121,7 +121,7 @@ const syncAndSeed = async () => {
   await School.create({
     name: 'Stanford',
     imageURL:
-      'https://teachingcommons.stanford.edu/sites/teachingcommons/files/styles/ug-8-col-header/public/images/2015/08/cfr-p4-14_2.jpg?itok=3GTpg8xj',
+      'https://www.collegeconsensus.com/wp-content/uploads/2016/12/intro_about-800x532.jpg',
   });
 };
 module.exports = {
