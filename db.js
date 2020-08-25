@@ -111,7 +111,7 @@ const syncAndSeed = async () => {
   await School.create({
     name: 'MIT',
     imageURL:
-      'http://news.mit.edu/sites/mit.edu.newsoffice/files/styles/news_article_image_top_slideshow/public/images/2018/MIT-Computer-Announce-01_0.jpg?itok=nDI5_kh0',
+      'https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/201810/MIT-Computer-Announce-01_0.jpg?itok=VCOJMCvN',
   });
   await School.create({
     name: 'Harvard',
