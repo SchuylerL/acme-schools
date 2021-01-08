@@ -1,15 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 import {
   deleteStudentAction,
-  updateStudentAction
-} from "../actions/ActionsStudent";
+  updateStudentAction,
+} from '../actions/ActionsStudent';
 
 class StudentDetail extends React.Component {
   constructor() {
     super();
     this.state = {
-      schoolId: ""
+      schoolId: '',
     };
     this.studentData = this.studentData.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -21,7 +21,7 @@ class StudentDetail extends React.Component {
       lastName: this.props.lastName,
       email: this.props.email,
       gpa: this.props.gpa,
-      schoolId: event.target.value
+      schoolId: event.target.value,
     });
   }
   onSubmit(event) {
@@ -35,25 +35,26 @@ class StudentDetail extends React.Component {
   render() {
     const { schools, firstName, lastName, gpa, schoolId } = this.props;
     const singleSchool = schools.filter(
-      school => school.id === this.props.schoolId
+      (school) => school.id === this.props.schoolId
     );
     return (
-      <div className="student">
+      <div className="school">
         <img
-          src={singleSchool[0] === undefined ? "" : singleSchool[0].imageURL}
-          alt={singleSchool[0] === undefined ? "" : singleSchool[0].imageURL}
+          src={singleSchool[0] === undefined ? '' : singleSchool[0].imageURL}
+          alt={singleSchool[0] === undefined ? '' : singleSchool[0].imageURL}
         />
-        <li>Name: {firstName + " " + lastName}</li>
+        <li>Name: {firstName + ' ' + lastName}</li>
         <li>GPA: {gpa}</li>
+        <br />
         <form onSubmit={this.onSubmit}>
           <select
             onChange={this.studentData}
-            value={this.state.schoolId ? this.state.schoolId : schoolId || ""}
+            value={this.state.schoolId ? this.state.schoolId : schoolId || ''}
           >
             <option key="" value="">
-              -- Choose School --
+              - Choose School -
             </option>
-            {schools.map(school => (
+            {schools.map((school) => (
               <option key={school.id} value={school.id}>
                 {school.name}
               </option>
@@ -72,17 +73,14 @@ class StudentDetail extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  schools: state.schools
+const mapStateToProps = (state) => ({
+  schools: state.schools,
 });
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     deleteStudentAction: () => dispatch(deleteStudentAction(ownProps)),
-    updateStudentAction: studentInfo =>
-      dispatch(updateStudentAction(studentInfo))
+    updateStudentAction: (studentInfo) =>
+      dispatch(updateStudentAction(studentInfo)),
   };
 };
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(StudentDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(StudentDetail);

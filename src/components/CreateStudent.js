@@ -1,16 +1,16 @@
-import React from "react";
-import { createStudentAction } from "../actions/ActionsStudent";
-import { connect } from "react-redux";
+import React from 'react';
+import { createStudentAction } from '../actions/ActionsStudent';
+import { connect } from 'react-redux';
 
 class CreateStudent extends React.Component {
   constructor() {
     super();
     this.state = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      gpa: "",
-      schoolId: ""
+      firstName: '',
+      lastName: '',
+      email: '',
+      gpa: '',
+      schoolId: '',
     };
     this.onHandle = this.onHandle.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -18,23 +18,23 @@ class CreateStudent extends React.Component {
   }
   onHandle(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
   selector(event) {
     this.setState({
-      schoolId: event.target.value
+      schoolId: event.target.value,
     });
   }
   onSubmit(event) {
     event.preventDefault();
     this.props.createStudentAction(this.state);
-    window.location.hash = "/students";
+    window.location.hash = '/students';
   }
   render() {
     const { schools } = this.props;
     return (
-      <div className="addStudentToSchool">
+      <div className="school">
         <form onSubmit={this.onSubmit}>
           <label htmlFor="firstName">First Name: </label>
           <input
@@ -52,48 +52,61 @@ class CreateStudent extends React.Component {
           />
           <label htmlFor="email">Email: </label>
           <input
-            type="text"
+            type="email"
             onChange={this.onHandle}
             name="email"
             value={this.state.email}
           />
           <label htmlFor="gpa">GPA: </label>
           <input
-            type="text"
+            type="number"
             onChange={this.onHandle}
             name="gpa"
             value={this.state.gpa}
+            min="0"
+            max="4.5"
+            step="0.1"
           />
           Enroll At:
           <select onChange={this.selector}>
             <option key="" value="">
-              -- Choose School --
+              - Choose a School -
             </option>
-            {schools.map(school => (
+            {schools.map((school) => (
               <option key={school.id} value={school.id}>
                 {school.name}
               </option>
             ))}
           </select>
-          <button>Add Student</button>
+          <br />
+          <button
+            disabled={
+              !this.state.firstName ||
+              !this.state.lastName ||
+              !this.state.email ||
+              !this.state.gpa ||
+              !this.state.schoolId
+                ? true
+                : false
+            }
+          >
+            Add Student
+          </button>
         </form>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    createStudentAction: studentInfo =>
-      dispatch(createStudentAction(studentInfo))
+    createStudentAction: (studentInfo) =>
+      dispatch(createStudentAction(studentInfo)),
   };
 };
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    schools: state.schools
+    schools: state.schools,
   };
 };
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CreateStudent);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateStudent);

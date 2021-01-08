@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import StudentDetail from "./StudentDetail";
-import UpdateStudent from "./UpdateStudent";
-import { schoolDetailAction } from "../actions/ActionsSchool";
+import React from 'react';
+import { connect } from 'react-redux';
+import StudentDetail from './StudentDetail';
+import UpdateStudent from './UpdateStudent';
+import { schoolDetailAction } from '../actions/ActionsSchool';
 
 class SchoolDetail extends React.Component {
   componentDidMount() {
@@ -13,8 +13,8 @@ class SchoolDetail extends React.Component {
     return (
       <div>
         {students
-          .filter(student => student.schoolId === school.id)
-          .map(student => (
+          .filter((student) => student.schoolId === school.id)
+          .map((student) => (
             <StudentDetail key={student.id} {...student} />
           ))}
         <UpdateStudent school={school} students={students} />
@@ -23,11 +23,8 @@ class SchoolDetail extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   school: state.school,
-  students: state.students
+  students: state.students,
 });
-export default connect(
-  mapStateToProps,
-  { schoolDetailAction }
-)(SchoolDetail);
+export default connect(mapStateToProps, { schoolDetailAction })(SchoolDetail);

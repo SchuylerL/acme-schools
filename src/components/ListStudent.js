@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { listStudentsAction } from "../actions/ActionsStudent";
-import StudentDetail from "./StudentDetail";
-import CreateStudent from "./CreateStudent";
+import React from 'react';
+import { connect } from 'react-redux';
+import { listStudentsAction } from '../actions/ActionsStudent';
+import StudentDetail from './StudentDetail';
+import CreateStudent from './CreateStudent';
 
 class ListStudent extends React.Component {
   componentDidMount() {
@@ -11,9 +11,9 @@ class ListStudent extends React.Component {
   render() {
     const { students, schools } = this.props;
     return (
-      <div className="list">
-        <CreateStudent schools={schools} />
-        {students.map(student => (
+      <div>
+        {/* <CreateStudent schools={schools} /> */}
+        {students.map((student) => (
           <div key={student.id}>
             <StudentDetail {...student} />
           </div>
@@ -23,10 +23,7 @@ class ListStudent extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  students: state.students
+const mapStateToProps = (state) => ({
+  students: state.students,
 });
-export default connect(
-  mapStateToProps,
-  { listStudentsAction }
-)(ListStudent);
+export default connect(mapStateToProps, { listStudentsAction })(ListStudent);

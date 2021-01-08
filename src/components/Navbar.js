@@ -1,15 +1,15 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { connect } from "react-redux";
-import { listSchoolsAction } from "../actions/ActionsSchool";
-import { listStudentsAction } from "../actions/ActionsStudent";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { listSchoolsAction } from '../actions/ActionsSchool';
+import { listStudentsAction } from '../actions/ActionsStudent';
 
 class Navbar extends React.Component {
   constructor() {
     super();
     this.state = {
-      schoolName: "",
-      schoolId: ""
+      schoolName: '',
+      schoolId: '',
     };
   }
   componentDidMount() {
@@ -21,9 +21,9 @@ class Navbar extends React.Component {
     //find the most popular school
     let count = 0,
       popindex = 0,
-      popschoolname = "";
+      popschoolname = '';
     const pop = schools.map(
-      school =>
+      (school) =>
         students.reduce(
           (tot, i) => (i.schoolId && i.schoolId === school.id ? tot + 1 : tot),
           0
@@ -41,7 +41,7 @@ class Navbar extends React.Component {
     const getTopSchool = (stdnts, schls) => {
       const obj = {};
       const studentFiltered = stdnts.filter(
-        student => student.schoolId !== null
+        (student) => student.schoolId !== null
       );
       for (let i = 0; i < studentFiltered.length; i++) {
         if (!obj[studentFiltered[i].schoolId]) {
@@ -52,28 +52,36 @@ class Navbar extends React.Component {
         }
       }
       const keys = Object.keys(obj),
-        totalsCheck = keys.map(item => obj[item]);
+        totalsCheck = keys.map((item) => obj[item]);
       const avgGPA = totalsCheck.map(
-        item =>
+        (item) =>
           item.reduce((sum, i) => sum + parseFloat(i.gpa), 0) / item.length
       );
       const idx = avgGPA.indexOf(Math.max(...avgGPA)),
         smartSchool = keys[idx],
-        school = schls.filter(school => school.id === smartSchool);
+        school = schls.filter((school) => school.id === smartSchool);
+      school.push(avgGPA);
+      // school[0].gpaa=avgGPA
+      // console.log(school);
       return school;
     };
-    let topschool = "",
-      smartid = "",
+    let topschoolsgpa = '';
+    let topschool = '',
+      smartid = '',
       smart = getTopSchool(students, schools);
     if (smart[0] !== undefined) {
       topschool = smart[0].name;
       smartid = smart[0].id;
+      smart = smart.flat();
+      topschoolsgpa = smart[smart.length - 1];
+      // topschoolsgpa = topschoolsgpa[0];
     }
-
+    console.log(smart);
+    console.log(topschoolsgpa);
     return (
       <div className="navbar">
         <NavLink className="navlink" exact to="/">
-          ACME Schools
+          ACME Schools: Enroll
         </NavLink>
         <NavLink className="navlink" exact to="/schools">
           Schools ({schools.length})
@@ -84,23 +92,23 @@ class Navbar extends React.Component {
         <NavLink
           className="navlink"
           exact
-          to={`/schools/${popindex === 0 ? "" : popindex}`}
+          to={`/schools/${popindex === 0 ? '' : popindex}`}
         >
-          Most Popular: {popschoolname} ({count})
+          Most Popular: {popschoolname} {count === 0 ? '' : count}
         </NavLink>
         <NavLink className="navlink" exact to={`/schools/${smartid}`}>
-          Top School: {topschool} ({topschool})
+          Top School: {topschool} {topschoolsgpa}
         </NavLink>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   schools: state.schools,
-  students: state.students
+  students: state.students,
 });
-export default connect(
-  mapStateToProps,
-  { listSchoolsAction, listStudentsAction }
-)(Navbar);
+export default connect(mapStateToProps, {
+  listSchoolsAction,
+  listStudentsAction,
+})(Navbar);

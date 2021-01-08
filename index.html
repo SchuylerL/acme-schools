@@ -1,94 +1,97 @@
 <html>
+  <head>
+    <style>
+      body {
+        font-family: helvetica;
+        background-color: rgb(51, 51, 51);
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      img {
+        width: 25%;
+        height: 25%;
+        margin: auto;
+        padding: 5px;
+      }
+      .navlink {
+        border: solid 1px dodgerBlue;
+        text-decoration: none;
+      }
+      .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-bottom: 0.5em;
+      }
+      .destroybtn {
+        color: red;
+      }
+      div {
+        width: 60vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+      }
+      a.active,
+      a:hover {
+        background-color: dodgerBlue;
+        color: white;
+        /* border: solid 1px white; */
+      }
+      a {
+        padding: 5px;
+        /* border: solid 1px dodgerBlue; */
+        /* border-radius: 3px; */
+        color: dodgerBlue;
+      }
+      label,
+      li,
+      form {
+        /* margin: 5px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+        margin: auto;
+        /* padding: 10px; */
+      }
+      input,
+      select {
+        height: 20px;
+        width: 200px;
+        margin: auto;
+        align-content: center;
+      }
+      button {
+        /* height: 20px; */
+        /* width: 200px; */
+        margin: auto;
+        align-content: center;
+      }
+      .school {
+        border: solid 1px dodgerBlue;
+        padding: 10px 0 10px 0;
+      }
+      /* .addStudentToSchool,
+      .list {
+        border: solid 1px dodgerBlue; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+      } */
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="/dist/main.js"></script>
+    <title>ACME Schools</title>
+  </head>
 
-<head>
-  <style>
-    body {
-      font-family: helvetica;
-      background-color: rgb(30, 30, 30);
-      color: white;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    .navbar {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      padding-bottom: 0.5em;
-    }
-
-    .destroybtn {
-      color: red;
-    }
-
-    div {
-      width: 650px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-content: center;
-    }
-
-    a.active,
-    a:hover {
-      background-color: dodgerBlue;
-      color: white;
-      border: solid 1px white;
-    }
-
-    a {
-      padding: 5px;
-      border: solid 1px dodgerBlue;
-      border-radius: 3px;
-      text-decoration: none;
-      color: dodgerBlue;
-    }
-
-    li,
-    form {
-      margin: 5px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-content: center;
-      margin-left: 150px;
-      margin-right: 150px;
-    }
-
-    input,
-    select,
-    button {
-      height: 20px;
-      margin-top: 5px;
-    }
-
-    .school,
-    .addStudentToSchool,
-    .student,
-    .list {
-      border: solid 1px dodgerBlue;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-content: center;
-    }
-
-    .school img {
-      width: 60%;
-      height: 60%;
-      margin: auto;
-    }
-  </style>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script defer src="/dist/main.js"></script>
-  <title>ACME Schools</title>
-</head>
-
-<body>
-  <div id="root"></div>
-</body>
-
+  <body>
+    <div id="root"></div>
+  </body>
 </html>

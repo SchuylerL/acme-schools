@@ -1,24 +1,24 @@
-import React from "react";
-import { connect } from "react-redux";
-import { updateStudentAction } from "../actions/ActionsStudent";
+import React from 'react';
+import { connect } from 'react-redux';
+import { updateStudentAction } from '../actions/ActionsStudent';
 
 class UpdateStudent extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: "",
-      firstName: "",
-      lastName: "",
-      email: "",
-      gpa: "",
-      schoolId: ""
+      id: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      gpa: '',
+      schoolId: '',
     };
     this.studentData = this.studentData.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
   studentData(event) {
     const studentInfo = this.props.students.filter(
-      student => student.id === event.target.value
+      (student) => student.id === event.target.value
     );
     this.setState({
       id: studentInfo[0].id,
@@ -26,7 +26,7 @@ class UpdateStudent extends React.Component {
       lastName: studentInfo[0].lastName,
       email: studentInfo[0].email,
       gpa: studentInfo[0].gpa,
-      schoolId: this.props.school.id
+      schoolId: this.props.school.id,
     });
   }
   onSubmit(event) {
@@ -36,15 +36,16 @@ class UpdateStudent extends React.Component {
   }
   render() {
     return (
-      <div className="addStudentToSchool">
+      <div>
+        <br />
         <form onSubmit={this.onSubmit}>
           <select onChange={this.studentData}>
             <option key="" value="">
-              -- Add Student --
+              - Add a Student to this school -
             </option>
-            {this.props.students.map(student => (
+            {this.props.students.map((student) => (
               <option key={student.id} value={student.id}>
-                {student.firstName + " " + student.lastName}
+                {student.firstName + ' ' + student.lastName}
               </option>
             ))}
           </select>
@@ -55,18 +56,15 @@ class UpdateStudent extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    updateStudentAction: studentInfo =>
-      dispatch(updateStudentAction(studentInfo))
+    updateStudentAction: (studentInfo) =>
+      dispatch(updateStudentAction(studentInfo)),
   };
 };
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    students: state.students
+    students: state.students,
   };
 };
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(UpdateStudent);
+export default connect(mapStateToProps, mapDispatchToProps)(UpdateStudent);
