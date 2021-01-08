@@ -76,8 +76,8 @@ class Navbar extends React.Component {
       topschoolsgpa = smart[smart.length - 1];
       // topschoolsgpa = topschoolsgpa[0];
     }
-    console.log(smart);
-    console.log(topschoolsgpa);
+    // console.log(smart);
+    // console.log(topschoolsgpa);
     return (
       <div className="navbar">
         <NavLink className="navlink" exact to="/">
