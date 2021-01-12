@@ -81,23 +81,34 @@ class Navbar extends React.Component {
     return (
       <div className="navbar">
         <NavLink className="navlink" exact to="/">
-          ACME Schools: Enroll
+          ACME Schools:
+          <br />
+          Enroll
         </NavLink>
         <NavLink className="navlink" exact to="/schools">
-          Schools ({schools.length})
+          Schools:
+          <br />({schools.length})
         </NavLink>
         <NavLink className="navlink" exact to="/students">
-          Students ({students.length})
+          Students:
+          <br />({students.length})
         </NavLink>
         <NavLink
           className="navlink"
           exact
           to={`/schools/${popindex === 0 ? '' : popindex}`}
         >
-          Most Popular: {popschoolname} {count === 0 ? '' : count}
+          Most Popular:
+          <br />
+          {popschoolname} {count === 0 ? null : '(' + count + ' enrolled' + ')'}
         </NavLink>
         <NavLink className="navlink" exact to={`/schools/${smartid}`}>
-          Top School: {topschool} {topschoolsgpa}
+          Top School:
+          <br />
+          {topschool}
+          {topschoolsgpa === undefined
+            ? null
+            : '(' + topschoolsgpa + ' GPA' + ')'}
         </NavLink>
       </div>
     );

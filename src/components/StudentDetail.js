@@ -39,10 +39,10 @@ class StudentDetail extends React.Component {
     );
     return (
       <div className="school">
-        {/* <img
-          src={singleSchool[0] === undefined ? '' : singleSchool[0].imageURL}
-          alt={singleSchool[0] === undefined ? '' : singleSchool[0].imageURL}
-        /> */}
+        <img
+          src={singleSchool[0] === undefined ? null : singleSchool[0].imageURL}
+          alt={singleSchool[0] === undefined ? null : singleSchool[0].imageURL}
+        />
         <li>Name: {firstName + ' ' + lastName}</li>
         <li>GPA: {gpa}</li>
         <br />
