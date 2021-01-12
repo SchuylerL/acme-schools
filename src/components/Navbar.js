@@ -105,7 +105,7 @@ class Navbar extends React.Component {
         <NavLink className="navlink" exact to={`/schools/${smartid}`}>
           Top School:
           <br />
-          {topschool}
+          {topschool}{' '}
           {topschoolsgpa === undefined
             ? null
             : '(' + topschoolsgpa + ' GPA' + ')'}
