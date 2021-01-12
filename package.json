@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "15.x"
+  },
   "scripts": {
     "postinstall": "npm run webpack",
     "webpack": "webpack",
