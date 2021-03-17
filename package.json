@@ -11,7 +11,7 @@
     "webpack": "webpack",
     "build": "webpack",
     "webpack:dev": "npm run webpack -- --watch --mode=development",
-    "start:dev": "npm run webpack:dev & nodemon server.js --ignore dist --ignore src",
+    "start": "npm run webpack:dev & nodemon server.js --ignore dist --ignore src",
     "server": "nodemon server.js --ignore dist --ignore src"
   },
   "keywords": [],
