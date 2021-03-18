@@ -3,13 +3,12 @@ const app = express();
 const path = require('path');
 const { syncAndSeed } = require('./db');
 
-app.listen(process.env.PORT);
-
 if (process.env.SYNC) {
   syncAndSeed();
 }
 // const port = process.env.PORT || 3000;
 syncAndSeed();
+app.listen(process.env.PORT);
 
 // let port = process.env.PORT;
 // if (port == null || port == '') {
