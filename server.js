@@ -6,17 +6,15 @@ const { syncAndSeed } = require('./db');
 if (process.env.SYNC) {
   syncAndSeed();
 }
-// const port = process.env.PORT || 3000;
 syncAndSeed();
-app.listen(process.env.PORT);
 
-// let port = process.env.PORT;
-// if (port == null || port == '') {
-//   port = 3000;
-// }
+let port = process.env.PORT;
+if (port == null || port == '') {
+  port = 3000;
+}
 // app.listen(port);
+app.listen(port, () => console.log(`listening on port ${port}`));
 
-// app.listen(port, () => console.log(`listening on port ${port}`));
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
