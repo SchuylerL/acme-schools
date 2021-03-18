@@ -6,10 +6,12 @@ const { syncAndSeed } = require('./db');
 if (process.env.SYNC) {
   syncAndSeed();
 }
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 syncAndSeed();
 
-app.listen(port, () => console.log(`listening on port ${port}`));
+app.listen(process.env.PORT || 3000, () =>
+  console.log(`listening on port ${port}`)
+);
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
