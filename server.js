@@ -8,10 +8,12 @@ if (process.env.SYNC) {
 }
 // const port = process.env.PORT || 3000;
 syncAndSeed();
-
-app.listen(process.env.PORT || 3000, () =>
-  console.log(`listening on port ${port}`)
-);
+let port = process.env.PORT;
+if (port == null || port == '') {
+  port = 3000;
+}
+app.listen(port);
+// app.listen(port, () => console.log(`listening on port ${port}`));
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
