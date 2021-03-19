@@ -6,6 +6,7 @@ const conn = new Sequelize(
     protocol: 'postgres',
     dialectOptions: {
       ssl: true,
+      rejectUnauthorized: false,
     },
   }
 );
