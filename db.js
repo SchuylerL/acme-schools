@@ -1,12 +1,7 @@
 const Sequelize = require('sequelize');
 const conn = new Sequelize(
   process.env.DATABASE_URL || 'postgres://localhost/acme-schools',
-  { logging: false },
-  {
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  }
+  { logging: false, ssl: true }
 );
 
 const Student = conn.define('student', {
