@@ -1,7 +1,13 @@
 const Sequelize = require('sequelize');
 const conn = new Sequelize(
   process.env.DATABASE_URL || 'postgres://localhost/acme-schools',
-  { logging: false, ssl: true }
+  {
+    dialect: 'postgres',
+    protocol: 'postgres',
+    dialectOptions: {
+      ssl: true,
+    },
+  }
 );
 
 const Student = conn.define('student', {
