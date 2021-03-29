@@ -1,14 +1,21 @@
 const Sequelize = require('sequelize');
 const conn = new Sequelize(
-  process.env.DATABASE_URL + '?sslmode=true' ||
-    'postgres://localhost/acme-schools',
-  {
+  process.env.DATABASE_URL || 'postgres://localhost/acme-schools',
+  /*{
     dialect: 'postgres',
     protocol: 'postgres',
-    /* dialectOptions: {
+     dialectOptions: {
       ssl: true,
       rejectUnauthorized: false,
-    }, */
+    }, 
+  }*/
+  {
+    ssl: true,
+    extra: {
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    },
   }
 );
 
