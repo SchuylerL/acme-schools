@@ -5,10 +5,10 @@ const conn = new Sequelize(
   {
     dialect: 'postgres',
     protocol: 'postgres',
-    dialectOptions: {
+    /* dialectOptions: {
       ssl: true,
       rejectUnauthorized: false,
-    },
+    }, */
   }
 );
 
