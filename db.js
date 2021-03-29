@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const conn = new Sequelize(
-  process.env.DATABASE_URL || 'postgres://localhost/acme-schools'
+  process.env.DATABASE_URL + '?sslmode=require' ||
+    'postgres://localhost/acme-schools'
   /* {
     dialect: 'postgres',
     protocol: 'postgres',
