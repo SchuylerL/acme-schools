@@ -114,7 +114,7 @@ const syncAndSeed = async () => {
     gpa: 4.0,
   });
   await School.create({
-    name: 'College of Winterhold',
+    name: 'Winterhold',
     imageURL:
       'https://th05.deviantart.net/fs71/PRE/i/2013/154/0/0/the_college_of_winterhold_by_thespiritofthewoods-d67p24x.jpg',
   });

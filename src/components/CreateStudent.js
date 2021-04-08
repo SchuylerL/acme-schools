@@ -67,10 +67,10 @@ class CreateStudent extends React.Component {
             max="4.5"
             step="0.1"
           />
-          Enroll At:
+          <label>Enroll At:</label>
           <select onChange={this.selector}>
             <option key="" value="">
-              - Choose a School -
+              Choose a School
             </option>
             {schools.map((school) => (
               <option key={school.id} value={school.id}>
@@ -78,7 +78,6 @@ class CreateStudent extends React.Component {
               </option>
             ))}
           </select>
-          <br />
           <button
             disabled={
               !this.state.firstName ||

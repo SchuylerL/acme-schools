@@ -41,7 +41,7 @@ class UpdateStudent extends React.Component {
         <form onSubmit={this.onSubmit}>
           <select onChange={this.studentData}>
             <option key="" value="">
-              - Add a Student to this school -
+              Add a Student here
             </option>
             {this.props.students.map((student) => (
               <option key={student.id} value={student.id}>

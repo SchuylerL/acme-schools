@@ -51,14 +51,13 @@ class StudentDetail extends React.Component {
         ) : null}
         <li>Name: {firstName + ' ' + lastName}</li>
         <li>GPA: {gpa}</li>
-        <br />
         <form onSubmit={this.onSubmit}>
           <select
             onChange={this.studentData}
             value={this.state.schoolId ? this.state.schoolId : schoolId || ''}
           >
             <option key="" value="">
-              - Choose School -
+              Choose School
             </option>
             {schools.map((school) => (
               <option key={school.id} value={school.id}>

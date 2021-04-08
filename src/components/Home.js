@@ -1,5 +1,5 @@
-import React from "react";
-import CreateStudent from "./CreateStudent";
+import React from 'react';
+import CreateStudent from './CreateStudent';
 
 const Home = () => {
   return (
