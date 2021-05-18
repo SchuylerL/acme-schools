@@ -49,7 +49,7 @@ class UpdateStudent extends React.Component {
               </option>
             ))}
           </select>
-          <button>Save</button>
+          <button>Add Student</button>
         </form>
       </div>
     );

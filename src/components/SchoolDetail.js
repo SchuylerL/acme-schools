@@ -17,7 +17,7 @@ class SchoolDetail extends React.Component {
           .map((student) => (
             <StudentDetail key={student.id} {...student} />
           ))}
-        <UpdateStudent school={school} students={students} />
+        {/* <UpdateStudent school={school} students={students} /> */}
       </div>
     );
   }

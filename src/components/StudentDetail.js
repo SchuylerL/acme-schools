@@ -70,7 +70,7 @@ class StudentDetail extends React.Component {
             className="destroybtn"
             onClick={() => this.props.deleteStudentAction()}
           >
-            Destroy Student
+            Delete Student
           </button>
         </form>
       </div>
