@@ -2,11 +2,7 @@ import React from 'react';
 import CreateStudent from './CreateStudent';
 
 const Home = () => {
-  return (
-    <div>
-      <CreateStudent />
-    </div>
-  );
+  return <CreateStudent />;
 };
 
 export default Home;

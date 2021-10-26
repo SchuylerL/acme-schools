@@ -99,7 +99,7 @@ class Navbar extends React.Component {
             : popschoolname + ' ' + '(' + count + ')'}
         </NavLink>
         <NavLink className="navlink" exact to={`/schools/${smartid}`}>
-          {topschoolsgpa === undefined
+          {topschoolsgpa === undefined || topschool === undefined
             ? 'Top School'
             : topschool + ' ' + '(' + topschoolsgpa.toFixed(2) + ' GPA' + ')'}
         </NavLink>

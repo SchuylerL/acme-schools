@@ -14,13 +14,14 @@ const root = document.querySelector('#root');
 render(
   <Provider store={store}>
     <div>
-      <h1>ACME Schools</h1>
       <HashRouter>
-        <Route path="/" component={Navbar} />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/students" component={ListStudent} />
-        <Route exact path="/schools" component={ListSchools} />
-        <Route exact path="/schools/:id" component={SchoolDetail} />
+        <div>
+          <Route path="/" component={Navbar} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/students" component={ListStudent} />
+          <Route exact path="/schools" component={ListSchools} />
+          <Route exact path="/schools/:id" component={SchoolDetail} />
+        </div>
       </HashRouter>
     </div>
   </Provider>,

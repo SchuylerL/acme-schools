@@ -37,7 +37,6 @@ class UpdateStudent extends React.Component {
   render() {
     return (
       <div>
-        <br />
         <form onSubmit={this.onSubmit}>
           <select onChange={this.studentData}>
             <option key="" value="">

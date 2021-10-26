@@ -3,7 +3,9 @@
     <style>
       body {
         font-family: helvetica;
+        /* background-color: rgb(51, 51, 51); */
         background: linear-gradient(90deg, rgb(51, 51, 51) 0, #c4caef 45%);
+        /* margin: 50px auto; */
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -11,27 +13,27 @@
         align-items: center;
         /* background: #edc0bf;
         background: linear-gradient(90deg, #edc0bf 0, #c4caef 58%); */
-        overflow-y: scroll;
       }
       img {
         width: 35%;
         height: 35%;
-        margin: 15px auto;
+        margin: 10px auto;
         border-radius: 20px;
       }
       .navbar {
-        width: 39vw;
         display: flex;
         flex-direction: row;
         background: rgba(255, 255, 255, 0.7);
         /* -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);*/
-        align-content: center;
         border-radius: 20px;
-        padding: 10px;
-        margin-bottom: 5px;
+        /* padding: 10px; */
+        margin-bottom: 10px;
         justify-content: space-evenly;
-        box-shadow: 0 2px 2px black;
+        width: 40vw;
+      }
+      .navbar h2 {
+        background-color: gray;
       }
       .navlink {
         text-decoration: none;
@@ -40,30 +42,33 @@
         border-radius: 20px;
       }
       .navlink.active {
-        background-color: dodgerblue;
+        color: black;
+        /* border: 1px solid black; */
         border-radius: 20px;
-        color: white;
+        /* padding: 5px; */
       }
       .destroybtn {
         color: red;
       }
       div {
         width: 40vw;
+        /* width: 500px; */
         display: flex;
         flex-direction: column;
-        margin: 5px 0;
-        align-content: center;
+        margin-bottom: 10px;
+        /* justify-content: space-between; */
+        /* align-content: center; */
+        /* justify-content: center; */
       }
       a:hover {
         background-color: dodgerBlue;
         color: white;
+        /* border: solid 1px dodgerblue; */
+        /* border-radius: 20px; */
       }
       a {
         text-decoration: none;
-        color: black;
-      }
-      a.active:hover {
-        color: white;
+        color: dodgerBlue;
       }
       label,
       li,
@@ -72,41 +77,44 @@
         flex-direction: column;
         justify-content: space-around;
         align-content: center;
-        margin: auto;
+        margin: 5px auto;
+        /* padding: 10px; */
       }
       input,
       select {
         height: 20px;
         width: 200px;
-        margin-top: 5px;
-        display: flex;
+        /* margin: 5px auto; */
         align-content: center;
-        text-align: center;
-        border-radius: 20px;
+        /* border-radius: 10px; */
+        /* padding: 10px; */
       }
       button {
         /* height: 20px; */
         width: 150px;
-        margin: 10px auto 0 auto;
+        margin: 5px auto;
         align-content: center;
         border-radius: 20px;
       }
       .school {
-        width: 40vw;
+        /* border: solid 1px dodgerBlue; */
         border-radius: 20px;
+        /* padding: 10px; */
+        /* margin-bottom: 10px; */
         text-align: center;
         background: rgba(255, 255, 255, 0.7);
         /* -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px); */
         box-shadow: 0 2px 2px black;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        padding: 10px 0;
+        width: 400px;
+      }
+      .container {
+        width: 600px;
+        background-color: green;
       }
       /* .addStudentToSchool,
       .list {
-        border: solid 1px dodgerBlue;
+        border: solid 1px dodgerBlue; 
         display: flex;
         flex-direction: column;
         justify-content: space-around;

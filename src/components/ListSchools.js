@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import UpdateStudent from './UpdateStudent';
-import CreateStudent from './CreateStudent';
+// import CreateStudent from './CreateStudent';
 
 class ListSchools extends React.Component {
   render() {

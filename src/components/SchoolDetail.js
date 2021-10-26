@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StudentDetail from './StudentDetail';
-import UpdateStudent from './UpdateStudent';
+// import UpdateStudent from './UpdateStudent';
 import { schoolDetailAction } from '../actions/ActionsSchool';
 
 class SchoolDetail extends React.Component {
@@ -11,7 +11,7 @@ class SchoolDetail extends React.Component {
   render() {
     const { school, students } = this.props;
     return (
-      <div>
+      <div className="school">
         {students
           .filter((student) => student.schoolId === school.id)
           .map((student) => (
