@@ -11,7 +11,7 @@ class SchoolDetail extends React.Component {
   render() {
     const { school, students } = this.props;
     return (
-      <div className="school">
+      <div>
         {students
           .filter((student) => student.schoolId === school.id)
           .map((student) => (
