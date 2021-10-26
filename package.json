@@ -10,9 +10,9 @@
   "scripts": {
     "postinstall": "npm run webpack",
     "webpack": "webpack",
-    "build": "webpack & export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start; webpack",
     "webpack:dev": "npm run webpack -- --watch --mode=development",
-    "start": "npm run webpack:dev & nodemon server.js --ignore dist --ignore src & export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start; npm run webpack:dev & nodemon server.js --ignore dist --ignore src",
     "server": "nodemon server.js --ignore dist --ignore src"
   },
   "keywords": [],
@@ -50,7 +50,7 @@
     "react-dom": "^17.0.2",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "^0.9.5",
+    "react-scripts": "^4.0.3",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "sequelize": "^5.9.4"

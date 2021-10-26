@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { listStudentsAction } from '../actions/ActionsStudent';
 import StudentDetail from './StudentDetail';
-import CreateStudent from './CreateStudent';
+// import CreateStudent from './CreateStudent';
 
 class ListStudent extends React.Component {
   componentDidMount() {
