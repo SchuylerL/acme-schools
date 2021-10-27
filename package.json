@@ -35,12 +35,11 @@
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "webpack": "^4.35.3",
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "babel-loader": "^8.2.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "heroku": "^7.2.0",
@@ -50,9 +49,21 @@
     "react-dom": "^17.0.2",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^0.9.5",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "sequelize": "^5.9.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';

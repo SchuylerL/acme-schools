@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
   GET_SCHOOLS,
   GET_STUDENTS,

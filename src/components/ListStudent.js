@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import { listStudentsAction } from '../actions/ActionsStudent';
@@ -9,7 +10,7 @@ class ListStudent extends React.Component {
     this.props.listStudentsAction();
   }
   render() {
-    const { students, schools } = this.props;
+    const { students } = this.props;
     return (
       <div>
         {/* <CreateStudent schools={schools} /> */}

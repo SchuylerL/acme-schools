@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -13,7 +14,9 @@ class ListSchools extends React.Component {
         {schools.map((school) => (
           <div className="school" key={school.id}>
             <img src={school.imageURL} alt={school.name} />
-            <Link to={`/schools/${school.id}`}>{school.name}</Link>
+            <Link className="schoolListName" to={`/schools/${school.id}`}>
+              {school.name}
+            </Link>
             Student Count:{' '}
             {students.reduce(
               (tot, i) =>

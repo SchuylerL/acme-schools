@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { createStudentAction } from '../actions/ActionsStudent';
 import { connect } from 'react-redux';
@@ -92,6 +93,7 @@ class CreateStudent extends React.Component {
             Add Student
           </button>
         </form>
+        <br />
       </div>
     );
   }

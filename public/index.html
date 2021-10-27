@@ -3,9 +3,7 @@
     <style>
       body {
         font-family: helvetica;
-        /* background-color: rgb(51, 51, 51); */
         background: linear-gradient(90deg, rgb(51, 51, 51) 0, #c4caef 45%);
-        /* margin: 50px auto; */
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -13,62 +11,61 @@
         align-items: center;
         /* background: #edc0bf;
         background: linear-gradient(90deg, #edc0bf 0, #c4caef 58%); */
+        overflow-y: scroll;
       }
       img {
-        width: 35%;
-        height: 35%;
-        margin: 10px auto;
+        /* width: 45%;
+        height: 45%; */
+        width: 300px;
+        height: 200px;
+        margin: 5px auto;
         border-radius: 20px;
       }
       .navbar {
+        width: 39vw;
         display: flex;
         flex-direction: row;
         background: rgba(255, 255, 255, 0.7);
         /* -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);*/
+        align-content: center;
         border-radius: 20px;
-        /* padding: 10px; */
-        margin-bottom: 10px;
+        padding: 10px;
+        margin-bottom: 5px;
         justify-content: space-evenly;
-        width: 40vw;
-      }
-      .navbar h2 {
-        background-color: gray;
+        box-shadow: 0 2px 2px black;
       }
       .navlink {
         text-decoration: none;
-        padding: 5px;
+        padding: 6px;
         box-shadow: 0 2px 2px black;
         border-radius: 20px;
       }
       .navlink.active {
-        color: black;
-        /* border: 1px solid black; */
+        background-color: dodgerblue;
         border-radius: 20px;
-        /* padding: 5px; */
+        color: white;
       }
       .destroybtn {
         color: red;
       }
-      div {
-        width: 40vw;
-        /* width: 500px; */
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
-        /* justify-content: space-between; */
-        /* align-content: center; */
-        /* justify-content: center; */
-      }
       a:hover {
         background-color: dodgerBlue;
         color: white;
-        /* border: solid 1px dodgerblue; */
-        /* border-radius: 20px; */
       }
       a {
         text-decoration: none;
-        color: dodgerBlue;
+        color: black;
+      }
+      a.active:hover {
+        color: white;
+      }
+      div {
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0;
+        align-content: center;
       }
       label,
       li,
@@ -77,44 +74,41 @@
         flex-direction: column;
         justify-content: space-around;
         align-content: center;
-        margin: 5px auto;
-        /* padding: 10px; */
+        margin: auto;
+        padding: 5px 0;
       }
       input,
       select {
         height: 20px;
         width: 200px;
-        /* margin: 5px auto; */
+        margin-top: 5px;
+        display: flex;
         align-content: center;
-        /* border-radius: 10px; */
-        /* padding: 10px; */
+        text-align: center;
+        border-radius: 20px;
       }
       button {
-        /* height: 20px; */
         width: 150px;
-        margin: 5px auto;
+        margin: 10px auto 0 auto;
         align-content: center;
         border-radius: 20px;
       }
       .school {
-        /* border: solid 1px dodgerBlue; */
+        /* width: 40vw; */
         border-radius: 20px;
-        /* padding: 10px; */
-        /* margin-bottom: 10px; */
         text-align: center;
         background: rgba(255, 255, 255, 0.7);
         /* -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px); */
         box-shadow: 0 2px 2px black;
-        width: 400px;
-      }
-      .container {
-        width: 600px;
-        background-color: green;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        padding: 10px 0;
       }
       /* .addStudentToSchool,
       .list {
-        border: solid 1px dodgerBlue; 
+        border: solid 1px dodgerBlue;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
